@@ -305,7 +305,6 @@ class GitRepo {
 			$env = array_merge($_ENV, $this->envopts);
 		}
 		$cwd = $this->repo_path;
-		echo 'Spawning command '.$command.PHP_EOL;
 		$resource = proc_open($command, $descriptorspec, $pipes, $cwd, $env);
 
 		$stdout = stream_get_contents($pipes[1]);
